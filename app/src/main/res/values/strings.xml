@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lista_compra</string>
+
+    <!--Texto para Tela de login-->
+    <string name="acesseContaTxt">Acesse sua conta</string>
+    <string name="crieContaTxt">Crie Conta</string>"
+
+    <string name="criarContaTxt">Criar Conta</string>"
+
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>"
+    <string name="senhaConfirmar">Confirme a senha</string>
+    <string name="acessar">Acessar</string>
+</resources>
