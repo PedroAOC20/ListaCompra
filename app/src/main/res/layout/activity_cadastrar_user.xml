@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CadastroActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".usuario.cadastro.CadastroActivity">
+
+    <!-- Título da tela -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/crieContaTxt"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Campo para inserir nome completo -->
+    <EditText
+        android:id="@+id/nome_completo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nomeCompleto"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo para inserir email -->
+    <EditText
+        android:id="@+id/Camp_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de senha -->
+    <EditText
+        android:id="@+id/Camp_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/senha"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo para confirmar senha -->
+    <EditText
+        android:id="@+id/confirmar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/senhaConfirmar"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Botão de cadastro -->
+    <Button
+        android:id="@+id/botao_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/criarContaTxt"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        />
+
+    <Button
+        android:id="@+id/retornar_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/blue"
+        android:textSize="20sp"
+        android:text="@string/voltar"
+        android:textColor="@color/white" />
+
+</LinearLayout>
