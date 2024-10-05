@@ -1,13 +1,13 @@
+package com.example.lista_compra.ListaList
+
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
+import com.example.lista_compra.R
 import com.example.myapplication.model.Listas
 
 class AdapterLista(private val context: Context, val list_listas: ArrayList<Listas>): RecyclerView.Adapter<AdapterLista.ListasViewHolder>() {
@@ -19,7 +19,7 @@ class AdapterLista(private val context: Context, val list_listas: ArrayList<List
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListasViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val l = LayoutInflater.from(context).inflate(R.layout.lista_list,parent,false)
+        val l = LayoutInflater.from(context).inflate(R.layout.activity_lista_list,parent,false)
         return ListasViewHolder(l)
     }
 

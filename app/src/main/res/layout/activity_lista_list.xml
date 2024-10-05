@@ -54,14 +54,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/botao_adicionar"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addingbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="15dp"
-        android:background="@drawable/ic_add_circle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:backgroundTint="@color/material_dynamic_primary30"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white"
+        tools:layout_editor_absoluteX="355dp"
+        tools:layout_editor_absoluteY="676dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

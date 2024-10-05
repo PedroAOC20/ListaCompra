@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_recycleview_listlistas"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/carnes"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="4"
+        android:text="Descrição teste da lista aaaaaaaaaaaaaaaa"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/foto"
+        app:layout_constraintTop_toBottomOf="@id/nomeProduto" />
+
+    <TextView
+        android:id="@+id/nomeProduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:text="Lista 01"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/foto"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
