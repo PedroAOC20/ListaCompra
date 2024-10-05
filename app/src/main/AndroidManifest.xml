@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lista_compra"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".usuario.cadastro.CadastroActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".usuario.login.LoginActivity"
             android:exported="true">
-            <intent-filter>
+
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
