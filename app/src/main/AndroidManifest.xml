@@ -19,8 +19,11 @@
 
         <activity
             android:name=".usuario.login.LoginActivity"
-            android:exported="true">
+            android:exported="true"/>
 
+        <activity
+            android:name=".gerenciador_lista_compra.ListaListActivity"
+            android:exported="true">
 
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
