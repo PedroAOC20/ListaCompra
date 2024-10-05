@@ -14,12 +14,9 @@ object UsuarioRepositorio {
         if (usuarios.any { it.email == usuario.email }) {
             return false // Email já cadastrado
         }
+        // Adiciona o usuário à lista
         usuarios.add(usuario)
-        return true // Cadastro bem-sucedido
-    }
-
-    fun listarUsuarios(): List<Usuario> {
-        return usuarios
+        return true
     }
 
     fun autenticar(email: String, senha: String): Usuario? {
