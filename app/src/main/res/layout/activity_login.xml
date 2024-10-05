@@ -49,9 +49,10 @@
         android:id="@+id/botao_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
         android:text="@string/acessar"
+        android:textSize="20sp"
         android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="8dp" />
@@ -60,13 +61,11 @@
         android:id="@+id/botao_cadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
-
         android:text="@string/criarContaTxt"
-        android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-
+        android:textColor="@color/black"
+        android:backgroundTint="@color/grey"
         android:layout_marginTop="10dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp" />
