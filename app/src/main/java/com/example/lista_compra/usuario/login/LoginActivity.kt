@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.lista_compra.R
 import com.example.lista_compra.databinding.ActivityLoginBinding
 import com.example.lista_compra.usuario.cadastro.CadastroActivity
+import com.example.lista_compra.gerenciador_lista_compra.ListaListActivity
 
 
 class LoginActivity : AppCompatActivity() {
@@ -38,15 +39,14 @@ class LoginActivity : AppCompatActivity() {
         viewModel.mensagem.observe(this, Observer { mensagem ->
             Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show()
             if (mensagem == "Login realizado com sucesso.") {
-                // Aguardando o arquivo da tela das listas.
-                // finish()
+                val intent = Intent(this, ListaListActivity::class.java)
+                startActivity(intent)
             }
         })
 
         binding.botaoLogin.setOnClickListener {
             val email = binding.CampEmail.text.toString()
             val senha = binding.CampPassword.text.toString()
-
             viewModel.autenticar(email, senha)
         }
 
