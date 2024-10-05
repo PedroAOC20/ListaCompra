@@ -4,11 +4,11 @@ import com.example.lista_compra.usuario.modelo.Usuario
 import java.util.concurrent.CopyOnWriteArrayList
 
 object UsuarioRepositorio {
-    private val usuarios = CopyOnWriteArrayList<Usuario>()
+    private val usuarios = CopyOnWriteArrayList <Usuario>()
 
     init {
-        // inicia aplicação com usuario admin criado.
-        usuarios.add(Usuario("admin", "admin@admin.com", "admin123"))
+        // Usuario admin = Mock
+        usuarios.add(Usuario("Admin", "admin@admin.com", "admin123"))
     }
 
     fun cadastrar(usuario: Usuario): Boolean {
