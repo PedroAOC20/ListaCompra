@@ -1,6 +1,5 @@
 package com.example.lista_compra.gerenciador_lista_compra
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -17,15 +16,14 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lista_compra.ListaList.AdapterLista
 import com.example.lista_compra.R
 import com.example.lista_compra.databinding.ActivityListaListBinding
 import com.example.lista_compra.usuario.login.LoginActivity
-import com.example.myapplication.model.Listas
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaListActivity : AppCompatActivity() {
-    private lateinit var addsbtn: FloatingActionButton
+    private lateinit var addsbtn: Button
     private lateinit var recyclerView: RecyclerView
     private lateinit var list_Lista: ArrayList<Listas>
     private lateinit var list_adapter: AdapterLista
@@ -38,8 +36,7 @@ class ListaListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        addsbtn = findViewById(R.id.addingbtn)
+        addsbtn = findViewById(R.id.btn_add)
         recyclerView = findViewById(R.id.recyclerView)
         list_Lista = ArrayList()
         list_adapter = AdapterLista(this, list_Lista)
@@ -58,7 +55,7 @@ class ListaListActivity : AppCompatActivity() {
             finish() // Finaliza a atividade atual
         }
 
-        val recyclerView_Listas = findViewById<RecyclerView>(R.id.activity_recycleview_listlistas)
+        val recyclerView_Listas = findViewById<RecyclerView>(R.id.recycleviewlista)
         recyclerView_Listas.layoutManager = LinearLayoutManager(this)
 
         val adapterLista = AdapterLista(this, list_Lista)

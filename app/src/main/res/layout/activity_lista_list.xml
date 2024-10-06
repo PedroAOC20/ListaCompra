@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".gerenciador_lista_compra.ListaListActivity">
+    >
 
     <SearchView
         android:id="@+id/camp_pesquisa"
@@ -19,7 +19,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="16dp"
         android:queryBackground="@android:color/transparent"
-        />
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/botao_logoutf"
@@ -54,11 +54,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addingbtn"
+    <Button
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
-        android:contentDescription="null"
         android:layout_height="wrap_content"
+        android:text="ADD"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="15dp"

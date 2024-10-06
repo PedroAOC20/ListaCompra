@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_margin="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/barra_pesquisa_background"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/addproduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Adicionar Produto"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomeproduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/inputnameproduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite um nome"
+            android:textSize="16dp"
+
+            />
+
+        <TextView
+            android:id="@+id/littleqtdproduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="quantidade:" />
+
+        <EditText
+            android:id="@+id/inputquantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a quantidade"
+            android:textSize="16dp"
+           />
+        <TextView
+            android:id="@+id/littlecategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="Categoria:" />
+        <EditText
+            android:id="@+id/inputcategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a categoria do produto"
+            android:textSize="16dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concluir"></Button>
+
+
+
+    </LinearLayout>
+</LinearLayout>

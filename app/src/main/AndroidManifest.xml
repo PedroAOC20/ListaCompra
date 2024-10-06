@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,25 +14,37 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lista_compra"
-        tools:targetApi="31">
-
+        tools:targetApi="34">
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
         <activity
             android:name=".usuario.cadastro.CadastroActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".gerenciador_lista_compra.ListaListActivity"
-            android:exported="true"/>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent2.action.MAIN" />
 
+                <category android:name="android.intent2.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".usuario.login.LoginActivity"
             android:exported="true">
-
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".gerenciador_lista_compra.AdapterLista"
+            android:exported="true" />
+        <activity
+            android:name=".gerenciador_lista_compra.Listas"
+            android:exported="true" />
     </application>
 
 </manifest>

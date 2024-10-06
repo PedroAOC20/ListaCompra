@@ -1,6 +1,4 @@
-package com.example.myapplication.model
-
-import android.net.Uri
+package com.example.lista_compra.gerenciador_lista_compra
 
 data class Listas(
     val foto: String,

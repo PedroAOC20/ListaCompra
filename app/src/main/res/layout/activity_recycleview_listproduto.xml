@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/produtosa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teste"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            />
+
+    <TextView
+        android:id="@+id/produtouni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unidade"
+        android:textSize="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/produtosa"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <TextView
+        android:id="@+id/quantidadet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:text="unidade"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/produtouni"
+        tools:layout_editor_absoluteY="15dp" />
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="categoria"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/produtouni"
+        tools:layout_editor_absoluteY="15dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="384dp"
+        tools:layout_editor_absoluteY="0dp" >
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
