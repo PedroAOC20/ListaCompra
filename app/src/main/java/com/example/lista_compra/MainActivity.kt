@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.lista_compra.R
+import com.example.lista_compra.gerenciador_lista_compra.ListaListActivity
 import com.example.lista_compra.usuario.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         // Navega para a LoginActivity
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        finish()
+
+        val intent2 = Intent(this, ListaListActivity::class.java)
+        startActivity(intent2)
         finish()
     }
 }

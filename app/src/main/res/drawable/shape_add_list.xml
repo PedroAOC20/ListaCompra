@@ -4,5 +4,4 @@
     <solid android:color="@color/white"/>
     <stroke android:color="@color/purple"/>
     <corners android:radius="25dp"/>
-
-    <shape/>
+</shape>

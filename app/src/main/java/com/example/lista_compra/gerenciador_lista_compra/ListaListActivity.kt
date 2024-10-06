@@ -29,13 +29,20 @@ class ListaListActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var list_Lista: ArrayList<Listas>
     private lateinit var list_adapter: AdapterLista
-    private var imageView: Uri? = null
-    private lateinit var btnimagem: Button
+    private var imagemUri: Uri? = null
     private lateinit var binding: ActivityListaListBinding
+
+    companion object {
+        const val IMAGE_REQUEST = 100
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        addsbtn = findViewById(R.id.addingbtn)
+        recyclerView = findViewById(R.id.recyclerView)
+        list_Lista = ArrayList()
+        list_adapter = AdapterLista(this, list_Lista)
         binding = ActivityListaListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lista_list_activity)) { v, insets ->
@@ -58,63 +65,48 @@ class ListaListActivity : AppCompatActivity() {
         recyclerView_Listas.adapter = adapterLista
 
 
-        lateinit var binding = ActivityListaListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        addsbtn = findViewById(R.id.addingbtn)
-        list_Lista = ArrayList()
-        addsbtn.setOnClickListener{addInfo()}
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = list_adapter
+        addsbtn.setOnClickListener { addInfo() }
     }
 
-    fun pickImage() {
+    private fun pickImage() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent, image_request)
-
-    }
-
-
-    companion object{
-        const val image_request = 100
+        startActivityForResult(intent, IMAGE_REQUEST)
     }
 
     private fun addInfo() {
         val infltr = LayoutInflater.from(this)
-        val v = infltr.inflate(R.layout.activity_add_lista,null)
+        val v = infltr.inflate(R.layout.activity_add_lista, null)
         val dialogo = AlertDialog.Builder(this)
         val nome_lista = v.findViewById<EditText>(R.id.inputname)
         val imagem_lista = v.findViewById<ImageView>(R.id.inputimage)
         val btnimagem = v.findViewById<Button>(R.id.btn_img)
 
-        btnimagem.setOnClickListener{
+        btnimagem.setOnClickListener {
             pickImage()
         }
 
         dialogo.setView(v)
-        dialogo.setPositiveButton("Concluido"){
-                dialog,_->
+        dialogo.setPositiveButton("Concluido") { dialog, _ ->
             val names = nome_lista.text.toString()
-            val imagens = imageView
-            Toast.makeText(this, "Adicionando", Toast.LENGTH_SHORT ).show()
+            val imagens = imagemUri?.toString() ?: "Inserir uma imagem"
+            Toast.makeText(this, "Adicionando", Toast.LENGTH_SHORT).show()
             list_Lista.add(Listas("Foto = $imagens", "Nome = $names"))
         }
-        dialogo.setNegativeButton("Cancelar"){
-                dialog,_->
+        dialogo.setNegativeButton("Cancelar") { dialog, _ ->
             dialog.dismiss()
-            Toast.makeText(this, "Cancelando", Toast.LENGTH_SHORT ).show()
+            Toast.makeText(this, "Cancelando", Toast.LENGTH_SHORT).show()
         }
         dialogo.create()
         dialogo.show()
+    }
 
-
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            super.onActivityResult(requestCode, resultCode, data)
-            if(requestCode == image_request && resultCode == RESULT_OK){
-                val SelectedImage = data?.data
-                imageView = SelectedImage
-                imagem_lista.setImageURI(SelectedImage)
-            }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
+            val selectedImageUri = data.data
+            imagemUri = selectedImageUri
+            findViewById<ImageView>(R.id.inputimage).setImageURI(selectedImageUri)
         }
     }
 }

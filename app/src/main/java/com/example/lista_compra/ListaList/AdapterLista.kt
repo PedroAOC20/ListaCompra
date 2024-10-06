@@ -1,6 +1,7 @@
 package com.example.lista_compra.ListaList
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lista_compra.R
 import com.example.myapplication.model.Listas
 
-class AdapterLista(private val context: Context, val list_listas: ArrayList<Listas>): RecyclerView.Adapter<AdapterLista.ListasViewHolder>() {
+class AdapterLista(val c:Context, val list_listas: ArrayList<Listas>): RecyclerView.Adapter<AdapterLista.ListasViewHolder>() {
 
     inner class ListasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val foto = itemView.findViewById<ImageView>(R.id.foto)
@@ -19,7 +20,7 @@ class AdapterLista(private val context: Context, val list_listas: ArrayList<List
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListasViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val l = LayoutInflater.from(context).inflate(R.layout.activity_lista_list,parent,false)
+        val l = inflater.inflate(R.layout.activity_lista_list,parent,false  )
         return ListasViewHolder(l)
     }
 
@@ -29,7 +30,8 @@ class AdapterLista(private val context: Context, val list_listas: ArrayList<List
 
     override fun onBindViewHolder(holder: ListasViewHolder, position: Int) {
         val newList = list_listas[position]
-        holder.foto.setImageURI(newList.foto)
+        val imageUri = Uri.parse(newList.foto )
+        holder.foto.setImageURI(imageUri)
         holder.nome.text = newList.nome
     }
 }
